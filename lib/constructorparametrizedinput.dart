@@ -1,31 +1,61 @@
+// import 'dart:io';
+
+// void main() {
+//   stdout.write("Enter first number: ");
+//   int a = int.parse(stdin.readLineSync()!);
+
+//   stdout.write("Enter second number: ");
+//   int b = int.parse(stdin.readLineSync()!);
+
+//   Add add = Add(a, b);  // yahan values pass karo
+
+//   add.calculation();
+//   add.display();
+// }
+
+// class Add {
+//   int a;
+//   int b;
+//   int? sum;
+
+//   // Proper parameterized constructor
+//   Add(this.a, this.b);
+
+//   void calculation() {
+//     sum = a + b;
+//   }
+
+//   void display() {
+//     print("Sum of two numbers is $sum");
+//   }
+// }
+
+
+
+
 import 'dart:io';
 
-void main() {
-  stdout.write("Enter first number: ");
-  int a = int.parse(stdin.readLineSync()!);
+class Add {
+  int? a, b, c;
 
-  stdout.write("Enter second number: ");
-  int b = int.parse(stdin.readLineSync()!);
+  Add(int a, int b) {
+    this.a = a;
+    this.b = b;
+  }
 
-  Add add = Add(a, b);  // yahan values pass karo
-
-  add.calculation();
-  add.display();
+  void sum() {
+    c = a! + b!;
+    print("Sum = $c");
+  }
 }
 
-class Add {
-  int a;
-  int b;
-  int? sum;
+void main() {
+  stdout.write("Enter the first number: ");
+  int a = int.parse(stdin.readLineSync()!);
 
-  // Proper parameterized constructor
-  Add(this.a, this.b);
+  stdout.write("Enter the second number: ");
+  int b = int.parse(stdin.readLineSync()!);
 
-  void calculation() {
-    sum = a + b;
-  }
-
-  void display() {
-    print("Sum of two numbers is $sum");
-  }
+  Add aa = Add(a, b);
+  aa.sum();
 }
